@@ -1,0 +1,82 @@
+.address-form {
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+
+  .form-header {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-contenant {
+    width: 30vw;
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+
+      .first-section {
+        padding-right: 30px;
+        width: 50%;
+      }
+      .second-section {
+        width: 50%;
+      }
+      span {
+        color: red;
+      }
+    }
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+  .registration-button {
+    background-color: $gold2 !important;
+    border: $gold2 solid 1px !important;
+    color: $darkBlue !important;
+    font-weight: 500 !important;
+    height: 40px;
+    float: right;
+
+    &:hover {
+      background-color: $gold !important;
+    }
+    &:focus:active {
+      box-shadow: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .address-form {
+    .form-contenant {
+      width: 35vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .address-form {
+    .form-contenant {
+      width: 45vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .address-form {
+    .form-contenant {
+      width: 65vw;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .address-form {
+    .form-contenant {
+      width: 90vw;
+    }
+  }
+}

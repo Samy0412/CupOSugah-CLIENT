@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Architects+Daughter&family=Averia+Sans+Libre:wght@400;700&family=Balsamiq+Sans:ital,wght@0,400;1,700&family=Chelsea+Market&family=Chilanka&family=Courgette&family=Gochi+Hand&family=Grandstander:wght@500&family=Kalam:wght@700&family=Londrina+Sketch&family=Love+Ya+Like+A+Sister&family=Pacifico&family=Single+Day&display=swap");
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+
+  color: #ffffff;
+  display: flex;
+  background-color: $darkBlue;
+
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.4);
+  ul {
+    list-style-type: none;
+  }
+  height: 60px;
+  flex-wrap: wrap;
+}
+
+.menu-dropdown {
+  padding-left: 30px;
+
+  .show {
+    z-index: 2;
+  }
+}
+
+.left-side-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .home-link {
+    text-decoration: none;
+  }
+
+  .logo-container {
+    flex: 1;
+
+    h4 {
+      font-size: 30px;
+      font-family: $logoFont8;
+      padding-top: 5px;
+      padding-left: 10px;
+      color: white;
+
+      span {
+        font-size: 40px;
+      }
+    }
+    img {
+      border-radius: 50%;
+      border: 2.8px solid $gold;
+      padding: 2px;
+      background-color: white;
+      height: 44px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.btn-secondary {
+  background-color: #fae5a4 !important;
+  color: $darkBlue !important;
+  &:hover {
+    background-color: $gold !important;
+  }
+  &:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+}
+.dropdown-menu.show {
+  a:hover {
+    text-decoration: none !important;
+  }
+}
+.dropdown-item {
+  &:hover {
+    background-color: #dfeffd !important;
+    border-radius: 15px;
+    text-decoration: none !important;
+  }
+  &:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+    color: $darkBlue !important;
+  }
+}
+
+.right-side-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .message-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-left: 0px;
+  }
+  .btn-secondary {
+    border-radius: 50% !important;
+    height: 40px !important;
+    width: 40px !important;
+    padding: 2px;
+  }
+}
+
+.user-info-nav {
+  display: flex;
+  align-items: flex-end;
+
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-left: 15px;
+    object-fit: cover;
+  }
+
+  h3 {
+    padding-top: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.link-style {
+  .icon-fa {
+    height: 38px;
+    width: 38px;
+    background-color: $gold2;
+    color: $darkBlue;
+    border-radius: 50%;
+    padding: 6px;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+
+    &:hover {
+      background-color: $gold;
+    }
+  }
+}
+
+.message-icon-text {
+  position: absolute;
+  top: 3px;
+  right: 20px;
+  color: white;
+  background-color: #e2574c;
+  width: 16px;
+  height: 16px;
+  font-size: 11px;
+  border-radius: 50%;
+}
+
+.no-message-icon-text {
+  display: none;
+}
+
+.user-dropdown-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+}
+.menu-dropdown-mobile {
+  display: none;
+}
+
+.button-layout {
+  img {
+    width: 25px;
+    height: 25px;
+    margin-left: -2px;
+    padding-right: 2px;
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//   .nav-bar {
+//     justify-content: space-between;
+//   }
+//   .left-side-nav {
+//     flex-direction: column;
+//   }
+//   .middle-nav {
+//     display: none;
+//   }
+
+//   .right-side-nav {
+//     justify-content: space-between;
+//   }
+
+//   .menu-dropdown {
+//     padding-left: 0;
+//     padding-top: 10px;
+//   }
+// }
+
+@media screen and (max-width: 780px) {
+  .nav-bar {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .left-side-nav {
+    .logo-container .logo {
+      display: none;
+    }
+    .logo-container img {
+      margin-bottom: 8px;
+    }
+    .menu-dropdown {
+      display: none;
+    }
+  }
+
+  .right-side-nav .message-icon,
+  .user-dropdown {
+    display: none;
+  }
+  .menu-dropdown-mobile {
+    display: block;
+    .btn-secondary {
+      border-radius: 50%;
+      height: 40px !important;
+      width: 40px !important;
+      padding: 2px;
+      margin-left: 10px;
+    }
+  }
+}

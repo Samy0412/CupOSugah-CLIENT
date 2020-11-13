@@ -1,0 +1,98 @@
+.box {
+  // box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+  border: solid 0.1em rgba(0, 0, 0, 0.1) !important;
+}
+
+.event-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  i {
+    padding-right: 10px;
+  }
+}
+.card-title {
+  font-size: 1.5rem !important;
+}
+
+.eventpost-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.post-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.message-icon {
+  color: $darkBlue;
+  padding-left: 20px;
+}
+
+.message-icon:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+.post-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#SA-post-message-or-new {
+  margin-left: auto;
+  margin-right: -4.5rem;
+  width: 15rem;
+}
+
+#service-post-delete-button {
+  margin-left: -0.75rem;
+  width: 11.5rem;
+  margin-right: 12rem;
+}
+
+#SA-post-message {
+  i {
+    margin-left: 7.3rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+#SA-post-title {
+  margin-top: -1rem;
+  // margin-bottom: -1rem;
+}
+
+.service-offer-request {
+  margin-top: -0.2rem;
+  font-size: 12px;
+  margin-left: 0.1rem;
+}
+
+#SA-no-posts {
+  margin-right: 1rem;
+  margin-left: -1rem;
+  width: 43rem;
+}
+
+.event-post-margins {
+  margin-left: 20px !important;
+  margin-right: 25px !important;
+}
+
+#event-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

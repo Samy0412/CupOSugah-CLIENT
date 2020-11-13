@@ -1,0 +1,94 @@
+.registration-form {
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+
+  .form-header {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-contenant {
+    width: 45vw;
+    .form {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+
+      .first-section {
+        padding-right: 30px;
+        width: 50%;
+      }
+      .second-section {
+        width: 50%;
+      }
+      span {
+        color: red;
+      }
+    }
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+  .registration-button {
+    background-color: $gold2 !important;
+    border: $gold2 solid 1px !important;
+    color: $darkBlue !important;
+    font-weight: 500 !important;
+    height: 40px;
+    float: right;
+
+    &:hover {
+      background-color: $gold !important;
+    }
+    &:focus:active {
+      box-shadow: none !important;
+    }
+  }
+}
+.custom-file {
+  cursor: pointer !important;
+}
+
+.custom-file-input {
+  cursor: inherit !important;
+  text-indent: -999px;
+}
+.custom-file-label::after {
+  background-color: $gold2 !important;
+  color: $darkBlue !important;
+  border-color: lightgray !important;
+}
+// input[type="file"] {
+// }
+
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: $gold !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(213, 178, 114, 0.6) !important;
+}
+
+@media screen and (max-width: 1600px) {
+  .registration-form {
+    .form-contenant {
+      width: 60vw;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .registration-form {
+    .form-contenant {
+      width: 70vw;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .registration-form {
+    .form-contenant {
+      width: 90vw;
+    }
+  }
+}

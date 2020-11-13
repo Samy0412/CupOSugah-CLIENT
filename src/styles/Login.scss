@@ -1,0 +1,74 @@
+form {
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+span.error-message {
+  color: red;
+}
+
+.form-contenant-login {
+  width: 20vw;
+  .event-form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    .first-section {
+      width: 100%;
+    }
+    .second-section {
+    }
+    span {
+      color: red;
+    }
+  }
+  hr {
+    margin-top: 30px;
+  }
+  p:after {
+    content: "OR";
+    left: 46%;
+    position: relative;
+    top: -1.7em;
+    font-size: 1em;
+    padding: 0 0.25em;
+    background: white;
+    color: $darkBlue;
+  }
+  p {
+    margin-bottom: -10px;
+  }
+  .registration {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .form-contenant-login {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .form-contenant-login {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .form-contenant-login {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .form-contenant-login {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form-contenant-login {
+    width: 90vw;
+  }
+}

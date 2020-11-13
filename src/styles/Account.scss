@@ -1,0 +1,184 @@
+#account-wrapper {
+  margin-top: -20px;
+}
+
+#account-spreader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-header-spreader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+}
+
+.account-header-spreader-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#account-user-info-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.account-user-name {
+  margin-top: 0.7rem;
+  margin-bottom: -0.5rem;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  text-align: center;
+}
+
+#account-header-contact-info {
+  margin-left: auto;
+}
+
+#account-button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+#account-center-column {
+  width: 40vw;
+}
+
+#account-edit {
+  margin-bottom: 0.9rem;
+}
+
+#account-bio {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#account-neighbourhood {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  #account-single-neighbourhood {
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #account-single-neighbours {
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#account-subscriptions-form {
+  width: 30rem;
+}
+
+#account-subscriptions-subscriptions {
+  width: 32rem;
+}
+
+.account-map-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.account-map-wrapper > * {
+  flex: 45% 45% 0;
+  margin: 0.05rem;
+  margin-left: 0.5rem;
+}
+
+.account-subscriptions-category {
+  margin-top: 0.8rem;
+  margin-bottom: -0.1px;
+}
+
+#account-subscription-title {
+  margin-bottom: 1rem;
+}
+
+#account-subscriptions-buttons {
+  margin-top: 1.5rem;
+}
+
+#account-subscription-cancel-button {
+  margin-left: 2rem;
+}
+
+#account-SMS-note {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  color: #5f5f64;
+}
+
+.button-layout {
+  display: flex;
+  flex-direction: row;
+  margin-left: -5px;
+  .icon {
+    margin-right: 5px;
+    color: #2c3e50;
+  }
+  .icon-fa {
+    margin-right: 7px;
+    margin-left: 2px;
+
+    height: 25px;
+    color: #2c3e50;
+  }
+
+  .exit {
+    color: red;
+  }
+}
+
+.checkbox {
+  margin-bottom: -7px;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  #account-center-column {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 850px) {
+  #account-center-column {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #account-center-column {
+    width: 95vw;
+  }
+
+  #account-button-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .account-button {
+    margin-bottom: 10px;
+  }
+}

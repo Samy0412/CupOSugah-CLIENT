@@ -1,0 +1,27 @@
+.box-left {
+  margin-top: 18px;
+}
+
+ul {
+  .border {
+    border-bottom: solid 0.1em rgba(0, 0, 0, 0.1) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+}
+
+.box-button {
+  background-color: #fae5a4 !important;
+  border: #fae5a4 solid 1px !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  width: 110%;
+  margin-left: -5%;
+  &:hover {
+    background-color: #f3c677 !important;
+  }
+  &:focus:active {
+    box-shadow: none !important;
+  }
+}

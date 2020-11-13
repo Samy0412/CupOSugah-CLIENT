@@ -1,0 +1,187 @@
+.postingRow {
+  display: flex;
+  justify-content: center;
+}
+
+.all-postings {
+  margin-top: -2rem;
+  max-width: 100%;
+
+  .card-body {
+    background-color: white !important;
+  }
+}
+
+#z-index-zero {
+  z-index: 1;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+}
+
+#services-alerts-title {
+  margin-top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#services-alerts-title-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white !important;
+  margin-left: 20px;
+  margin-right: 25px;
+}
+
+#services-alerts-header {
+  display: flex;
+  justify-content: center;
+  background-color: white !important;
+  font-family: $titleFont;
+
+  h1 {
+    font-size: 2.8rem !important;
+  }
+}
+.service-alert-border {
+  border-bottom: solid 0.5px rgba(0, 0, 0, 0.1) !important;
+}
+
+#services-alerts-spreader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#services-alerts-new-button {
+  height: 3.6rem;
+  width: 12rem;
+  margin-right: 0.5rem;
+}
+
+#services-alerts-filter-dropdown {
+  height: 3.6em;
+  width: 14rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.service-offer-request {
+  margin-top: 8px;
+  background-color: $gold2;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+  width: fit-content;
+  font-size: 0.8em;
+}
+
+.service-alert-button {
+  background-color: #fae5a4 !important;
+  border: #fae5a4 solid 1px !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  height: 52px;
+
+  &:hover {
+    background-color: #f3c677 !important;
+  }
+  &:focus:active {
+    box-shadow: none !important;
+  }
+}
+
+small {
+  padding-right: 10px;
+  font-size: 0.9em !important;
+}
+
+.post {
+  width: 100%;
+}
+
+.MuiFilledInput-root {
+  background-color: #fae5a4 !important;
+}
+
+#outlined-age-native-simple {
+  color: #2c3e50 !important;
+  font-size: 0.9em !important;
+}
+
+#category {
+  margin-top: -10px;
+}
+
+#radio {
+  span {
+    color: $gold !important;
+  }
+  margin-bottom: 0px;
+}
+
+.rounded-circle {
+  width: 45px;
+  height: 45px !important;
+  object-fit: cover;
+}
+
+#formBasicCategory {
+  margin-bottom: 10px;
+}
+
+#bottom-button {
+  margin-left: 20px;
+}
+
+.all-postings {
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmation-popup {
+  width: 20vw;
+  text-align: center;
+  h5 {
+    margin-bottom: 60px;
+  }
+  #confirmation-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .all-postings {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .confirmation-popup {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .all-postings {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .confirmation-popup {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .all-postings {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .confirmation-popup {
+    width: 80vw;
+  }
+}

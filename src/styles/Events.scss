@@ -1,0 +1,266 @@
+.fc-event-main {
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -1.4vh;
+}
+
+.fc {
+  padding: 20px;
+}
+.menu {
+  position: absolute;
+  top: -2vh;
+  left: 20vw;
+}
+.calender {
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
+}
+
+.fc-col-header-cell-cushion {
+  color: #2c3e50;
+}
+.fc-daygrid-day-number {
+  color: #2c3e50;
+}
+
+.form-contenant {
+  width: 40vw;
+  .event-form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    .first-section {
+      padding-right: 30px;
+      width: 50%;
+      .offer {
+        padding-left: 20px;
+        padding-bottom: 4px;
+      }
+      #formBasicDescription {
+        height: 90px;
+      }
+      .photo {
+        padding-top: 15px;
+      }
+      .description-height {
+        height: 180px !important;
+      }
+    }
+    .second-section {
+      width: 50%;
+      .date {
+        padding-bottom: 20px;
+      }
+      .address {
+        padding-top: 50px;
+      }
+      .description {
+        margin-top: -15px;
+        height: 154px;
+      }
+    }
+    span {
+      color: red;
+    }
+  }
+}
+
+#required {
+  color: red;
+}
+
+#services-alerts-filter-dropdown-events {
+  width: 14rem;
+  margin-bottom: 20px;
+  margin-top: 5.2rem;
+  z-index: 1;
+}
+
+.post-event-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0;
+  position: relative;
+}
+.card-main-container {
+  width: 35vw;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 0;
+}
+#event-container {
+  position: relative;
+  margin-bottom: -10px;
+}
+
+#close-button {
+  background-color: $gold2 !important;
+  color: $darkBlue;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 2px;
+  border-radius: 50%;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+
+  img {
+    width: 12px;
+  }
+
+  &:hover {
+    background-color: $gold !important;
+  }
+  &:focus:active {
+    outline: 0 !important;
+  }
+
+  .fa-times {
+    font-size: 20px;
+  }
+  #service-close {
+    margin-right: -10px;
+  }
+}
+#close-button-event {
+  background-color: $gold2 !important;
+  color: $darkBlue;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 2px;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 2000;
+
+  img {
+    width: 12px;
+  }
+
+  &:hover {
+    background-color: $gold !important;
+  }
+  &:focus:active {
+    outline: 0 !important;
+  }
+
+  .fa-times {
+    font-size: 20px;
+  }
+  #service-close {
+    margin-right: -10px;
+  }
+}
+
+#close-button-event-map {
+  background-color: $gold2 !important;
+  color: $darkBlue;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 2px;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 2000;
+
+  img {
+    width: 12px;
+  }
+
+  &:hover {
+    background-color: $gold !important;
+  }
+  &:focus:active {
+    outline: 0 !important;
+  }
+
+  .fa-times {
+    font-size: 20px;
+  }
+  #service-close {
+    margin-right: -10px;
+  }
+}
+
+#formBasicTitle,
+#formBasicDescription,
+#formBasicPhoto,
+#formBasicCategory,
+#formBasicAddress,
+#formBasicCity,
+#formBasicFirstname,
+#formBasicLastname,
+#formBasicEmail,
+#formBasicPhoneNumber,
+#formBasicProfilePhoto,
+#formBasicBio,
+#formBasicPassword,
+#formBasicName,
+#formBasicPicture,
+#formBasicPostalCode,
+#message {
+  &:hover {
+    border-color: $gold !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(213, 178, 114, 0.6) !important;
+  }
+
+  &:focus {
+    border-color: $gold !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(213, 178, 114, 0.6) !important;
+  }
+  &:active {
+    border-color: $gold !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(213, 178, 114, 0.6) !important;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .form-contenant {
+    width: 50vw;
+  }
+  .card-main-container {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .form-contenant {
+    width: 60vw;
+  }
+  .card-main-container {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .form-contenant {
+    width: 70vw;
+  }
+  .card-main-container {
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .form-contenant {
+    width: 90vw;
+  }
+  .card-main-container {
+    width: 100%;
+  }
+}

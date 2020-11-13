@@ -1,0 +1,348 @@
+.chat-application {
+  display: flex;
+  flex-direction: row;
+  // border: solid 2px black;
+  width: 50vw;
+  height: 89vh;
+  margin: auto;
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.03);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    border: solid 0.1em rgba(0, 0, 0, 0.1);
+    border-right: none !important;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+}
+.no-messages {
+  width: 50vw;
+  margin: auto;
+}
+
+.side-bar-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+  border-bottom: 1px solid $chatBorder;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+
+  .sender-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  small {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    font-size: 11px !important;
+    color: gray;
+  }
+  &:hover {
+    background-color: $gold2 !important;
+  }
+  &:focus {
+    outline: 0;
+    background-color: $gold2 !important;
+  }
+}
+
+.clique {
+  background-color: $gold2 !important;
+}
+
+.receiver {
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.messages-container {
+  font-weight: 500;
+  // border: 2px solid green;
+  width: 100%;
+}
+
+.conversation {
+  // border: solid 2px red;
+  height: 100%;
+
+  form {
+    border-radius: 0px;
+  }
+
+  figure {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    border: solid 0.1em rgba(0, 0, 0, 0.1) !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    h2 {
+      font-size: 15px;
+    }
+  }
+  .sender {
+    font-weight: 700;
+  }
+  .timestamp {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: -5px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+.user-information {
+  background-color: rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $chatBorder;
+
+  img {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 5px;
+    border-radius: 40px;
+  }
+}
+.main-content {
+  // border: solid 2px blue;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#dynamic-content {
+  // border: solid 2px purple;
+  max-height: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto;
+}
+.container-2 {
+  max-width: 100%;
+}
+.message-content {
+  font-weight: 500;
+  padding: 10px;
+  max-width: inherit;
+  margin: 10px 30px;
+  word-wrap: break-word;
+}
+
+.sent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  margin-top: -10px;
+  // border: 2px solid green;
+  width: 80%;
+  margin-left: auto;
+  img {
+    display: none;
+  }
+  .sender {
+    color: black;
+  }
+  .message-content {
+    background-color: #2c3e50;
+    border-radius: 20px 20px 5px 20px;
+  }
+  .timestamp {
+    color: black;
+    float: right;
+  }
+}
+
+.received {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #2c3e50;
+  margin-top: -10px;
+  // border: solid 2px red;
+  width: 80%;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .message-content {
+    background-color: #f3c677;
+    border-radius: 20px 20px 20px 5px;
+  }
+}
+
+.message-input {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid $chatBorder;
+  position: relative;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: $gold2 !important;
+    border: $gold2 solid 1px !important;
+    color: $darkBlue !important;
+    font-weight: 500 !important;
+
+    &:hover {
+      background-color: $gold !important;
+    }
+  }
+  .form-group {
+    width: 100%;
+  }
+  .form-control {
+    width: 100%;
+    border-radius: 20px;
+    padding-right: 65px;
+    &:hover {
+      box-shadow: 0px 0px 8px $chatBlue;
+    }
+  }
+}
+
+.new-conversation {
+  width: 100%;
+  .sender {
+    display: none;
+  }
+  .message-content {
+    padding: 1px;
+    color: black;
+    background-color: #ffffff;
+  }
+}
+.mobile {
+  display: none;
+}
+
+.chat-application-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .chat-application .no-messages {
+    width: 60vw;
+  }
+  .no-messages {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .chat-application {
+    width: 80vw;
+  }
+  .no-messages {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .chat-application {
+    width: 90vw;
+  }
+  .no-messages {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .no-messages {
+    width: 90vw;
+  }
+  .chat-application-mobile {
+    display: flex;
+    flex-direction: row;
+    // border: solid 2px black;
+    width: 50vw;
+    height: 79vh;
+    margin: auto;
+    width: 90vw;
+
+    .hidden {
+      display: none;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.03);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+      border: solid 0.1em rgba(0, 0, 0, 0.1);
+      border-right: solid 0.1em rgba(0, 0, 0, 0.1) !important;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+  figure {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  .chat-application {
+    display: none;
+  }
+  .back-button {
+    border: solid 1px $gold2 !important;
+    background-color: $gold2 !important;
+    color: $darkBlue !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+    width: fit-content;
+    height: 30px;
+    &:hover {
+      background-color: $gold !important;
+    }
+  }
+}

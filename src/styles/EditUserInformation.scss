@@ -1,0 +1,65 @@
+.edit-form-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-user-information-container {
+  height: 100%;
+}
+
+.change-neighbourhood-link {
+  h2 {
+    color: #1c658a;
+    font-size: 16px;
+    padding: 10px 0 20px 0;
+
+    &:hover {
+      color: $darkBlue;
+    }
+  }
+}
+
+.account-button {
+  background-color: #fae5a4 !important;
+  border: #fae5a4 solid 1px !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  height: 35px;
+  margin-left: 15px;
+
+  &:hover {
+    background-color: #f3c677 !important;
+  }
+  &:focus:active {
+    box-shadow: none !important;
+  }
+}
+
+#account-SMS-note {
+  margin-top: 0px;
+}
+
+.fa-save {
+  padding-right: 10px;
+}
+
+.save {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-neighbourhood {
+  margin-top: 20px;
+  width: 100% !important;
+  border: 1px solid #f3c677 !important;
+  color: #f3c677 !important;
+  &:hover {
+    background-color: #fae5a4 !important;
+    color: #2c3e50 !important;
+    border: none !important;
+  }
+}
