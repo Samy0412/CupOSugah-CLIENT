@@ -9,7 +9,7 @@
   publish = "build/"
 
   # Default build command.
-  command = "CI=" " npm run build"
+  command = "CI=false npm run build"
 
 [build.environment]
   REACT_APP_API_BASE_URL = "https://cuposugah.herokuapp.com/"
