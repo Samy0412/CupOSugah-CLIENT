@@ -46,7 +46,8 @@ function SelectNeighbourhood(props) {
       <Redirect to="/home" />);
   }
 
-  return (!neighbourhoods[0] ? null : (
+  // return (!neighbourhoods[0] ? null : (
+    return (
     <div>
     <header className="landing-header">
       <NavLink to="/">
@@ -80,7 +81,7 @@ function SelectNeighbourhood(props) {
     
   
   </div>
-  )
+  // )
   );
 }
 
