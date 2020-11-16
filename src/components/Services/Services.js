@@ -59,7 +59,7 @@ function Services(props) {
   const [validated, setValidated] = useState(false);
 
   const fetchServices = async () => {
-    const services = await axios.get("http://localhost:8001/services");
+    const services = await axios.get("/services");
     setServices(
       filterByNeighbourhood(services.data, props.user.neighbourhood_id)
     );

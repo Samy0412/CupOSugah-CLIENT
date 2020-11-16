@@ -78,7 +78,7 @@ function Alerts(props) {
   const [validated, setValidated] = useState(false);
 
   const fetchAlerts = async () => {
-    const alerts = await axios.get("http://localhost:8001/alerts");
+    const alerts = await axios.get("/alerts");
     setAlerts(filterByNeighbourhood(alerts.data, props.user.neighbourhood_id));
   };
 
