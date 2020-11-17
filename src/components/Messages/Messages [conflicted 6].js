@@ -31,7 +31,7 @@ useEffect(()=>{
           (response) => {
             setConversations(response.data);
           }).then (()=>{
-            axios.get("/messages/userMessages").then((response) => {
+            axios.get(`/messages/userMessages?user_id=${props.user.id}`).then((response) => {
               setConversations(response.data);
             }); 
           })
@@ -39,11 +39,11 @@ useEffect(()=>{
 },[props.receiver])
 
 useEffect (()=> {
-  axios.get("/messages/userMessages").then((response) => {
+  axios.get(`/messages/userMessages?user_id=${props.user.id}`).then((response) => {
     setConversations(response.data);
   }); 
 
-}, [])
+}, [messages])
 
 useEffect(()=> {
   toggleVisible();
