@@ -111,7 +111,7 @@ useEffect(()=> {
       
       let messageContent = (
         <div
-          // key={conversations[conversationID][i].time_sent}
+          key={i}
           className={
             conversations[conversationID][i].message_text === "New conversation started"
               ? "new-conversation"
