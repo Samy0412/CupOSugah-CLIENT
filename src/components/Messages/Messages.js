@@ -41,7 +41,6 @@ useEffect(()=>{
 useEffect (()=> {
   axios.get("/messages/userMessages").then((response) => {
     setConversations(response.data);
-    console.log("conversations:",conversations)
   }); 
 
 }, [messages])
@@ -168,6 +167,7 @@ useEffect(()=> {
    }
 
 console.log("conversation:",conversation)
+console.log("conversations:",conversations)
   return (
 
     <div>
