@@ -181,8 +181,7 @@ function CreateNeighbourhood(props) {
     axios.post("/users/addNeighbourhood", userInfo)
       .then((response) =>
         props.register(response.data),
-        sethomeRedirect(true)
-      );
+      ).then (()=> sethomeRedirect(true));
   };
 
 
