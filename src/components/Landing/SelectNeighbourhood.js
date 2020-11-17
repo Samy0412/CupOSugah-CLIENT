@@ -46,8 +46,7 @@ function SelectNeighbourhood(props) {
       <Redirect to="/home" />);
   }
 
-  // return (!neighbourhoods[0] ? null : (
-    return (
+  return (
     <div>
     <header className="landing-header">
       <NavLink to="/">
@@ -63,7 +62,7 @@ function SelectNeighbourhood(props) {
           <h2>Step 3: Join a neighbourhood</h2>
         </div>
         <div className="neighbourhood-choices">
-        {neighbourhoods.slice(0, 2).map(i => (
+        {neighbourhoods && neighbourhoods.slice(0, 2).map(i => (
           <figure key={i.id}>
             <img src={i.neighbourhood_photo} alt={i.name}></img>
             <Button variant="contained" className="neighbourhood-button" type="submit" onClick={(evt) => onAddNeighbourhood(evt, i.id)}>
@@ -78,10 +77,7 @@ function SelectNeighbourhood(props) {
     </div>
       </div>
     </div> 
-    
-  
   </div>
-  // )
   );
 }
 
