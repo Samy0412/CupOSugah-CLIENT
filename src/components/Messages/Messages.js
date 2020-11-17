@@ -106,34 +106,34 @@ useEffect(()=> {
     );
     let timeStamp = conversations[conversationID][conversations[conversationID].length-1].time_sent;
     timeStamps ={...timeStamps, [receiver_id]: timeStamp};
-
-    for (let message of conversations[conversationID]) {
+     console.log("conversations[conversationsID]",conversations[conversationID])
+    for (let i=0; i< conversations[conversationID].length; i++) {
       
       let messageContent = (
         <div
-          key={message.time_sent}
+          key={conversations[conversationID][i].time_sent}
           className={
-            message.message_text === "New conversation started"
+            conversations[conversationID][i].message_text === "New conversation started"
               ? "new-conversation"
               : " not-hidden"
           }
         >
           <div
             className={
-              message.sender_id === props.user.id ? " sent" : " received"
+              conversations[conversationID][i].sender_id === props.user.id ? " sent" : " received"
             }
           >
-            {<img src={userPhoto} alt={message.sender_firstName}/> } 
+            {<img src={userPhoto} alt={conversations[conversationID][i].sender_firstName}/> } 
             <div className="container-2">
             <h2
               className={
-                message.message_text.length < 1 ? " hidden" : " message-content"
+                conversations[conversationID][i].message_text.length < 1 ? " hidden" : " message-content"
               }
             >
-              {message.message_text}
+              {conversations[conversationID][i].message_text}
             </h2>
             <h2 className="timestamp">
-              {moment(message.time_sent, "").fromNow()}
+              {moment(conversations[conversationID][i].time_sent, "").fromNow()}
             </h2>
             </div>
           </div>
