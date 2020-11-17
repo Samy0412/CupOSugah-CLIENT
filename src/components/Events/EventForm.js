@@ -13,7 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 //Helpers
 import filterByNeighbourhood from "../Helpers/filterByNeighbourhood";
-import sendSubscriptionSMS from "../Helpers/sendSubscriptionsSMS";
+// import sendSubscriptionSMS from "../Helpers/sendSubscriptionsSMS";
 
 import "../../styles.scss";
 

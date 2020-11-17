@@ -42,9 +42,7 @@ export default function Calendar(props) {
       );
       const formatedEvents = filtredEvents.map((event) => {
         let formattedEvent = Object.assign({}, event);
-        // formattedEvent.start = `${event.event_start.slice(0, 10)}T${
-        //   event.event_time
-        formattedEvent.start = event.event_start;
+        formattedEvent.start = event.event_start.slice(0,19);
         
         switch (formattedEvent.category_id) {
           case 12:
