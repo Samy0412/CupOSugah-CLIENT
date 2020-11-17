@@ -23,11 +23,7 @@ export default function useApplicationData() {
     }
   }, []);
 
-  //Default state for receiver
-  // useEffect(() => {
-  //   const receiver = { test: 'test' };
-  //   setState({ ...state, receiver });
-  // }, []);
+
 
   //Stores the user information in localStorage so that we can use it to set the state again if a refresh happens
   useEffect(() => {

@@ -166,7 +166,7 @@ useEffect(()=> {
      } 
    }
 
-
+console.log("conversation:",conversation)
   return (
 
     <div>
