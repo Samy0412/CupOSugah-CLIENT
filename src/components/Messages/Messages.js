@@ -107,7 +107,7 @@ useEffect(()=> {
     let timeStamp = conversations[conversationID][conversations[conversationID].length-1].time_sent;
     timeStamps ={...timeStamps, [receiver_id]: timeStamp};
      console.log("conversations[conversationsID]",conversations[conversationID])
-    for (let i=0; i< conversations[conversationID].length; i++) {
+    for (let i=conversations[conversationID].length-1; i>=0; i--) {
       
       let messageContent = (
         <div
