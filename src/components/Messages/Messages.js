@@ -43,7 +43,7 @@ useEffect (()=> {
     setConversations(response.data);
   }); 
 
-}, [messages])
+}, [])
 
 useEffect(()=> {
   toggleVisible();
