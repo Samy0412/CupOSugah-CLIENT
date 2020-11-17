@@ -35,7 +35,7 @@ function Main(props) {
   useEffect(() => {
     getEventsForNeighbourhood(userNeighbourhoodId);
     findNeighbourhood(userNeighbourhoodId);
-  }, []);
+  }, [props.user.neighbourhood_id]);
   return (
     <div className="col-lg-6 gedf-main">
       <div className="upcoming-events">

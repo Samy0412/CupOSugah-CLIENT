@@ -31,7 +31,7 @@ function AlertsCarousel(props) {
     return () => {
       cancel.cancel();
     };
-  }, []);
+  }, [props.user.neighbourhood_id]);
 
   return (
     <Carousel className="items-container">

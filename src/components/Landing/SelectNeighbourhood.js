@@ -8,9 +8,6 @@ import { Button } from "@material-ui/core";
 
 //Our own style sheet
 import "../../styles.scss";
-import { isColPropsEqual } from "@fullcalendar/core";
-
-
 
 function SelectNeighbourhood(props) {
 
@@ -50,8 +47,7 @@ function SelectNeighbourhood(props) {
     axios.post("/users/addNeighbourhood", userInfo)
       .then((response) =>
         props.register(response.data),
-        sethomeRedirect(true)
-      );
+      ).then(()=> sethomeRedirect(true));
   };
 
   if (homeRedirect) {

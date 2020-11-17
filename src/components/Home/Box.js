@@ -32,7 +32,7 @@ function Box(props) {
   useEffect(() => {
     findNeighbourhood(userNeighbourhoodId);
     findNumberofNeighbours(userNeighbourhoodId);
-  }, []);
+  }, [props.user.neighbourhood_id]);
 
   return (
     <div className="col-lg-3 ">
