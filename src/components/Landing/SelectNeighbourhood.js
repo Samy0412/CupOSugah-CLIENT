@@ -8,6 +8,7 @@ import { Button } from "@material-ui/core";
 
 //Our own style sheet
 import "../../styles.scss";
+import { isColPropsEqual } from "@fullcalendar/core";
 
 
 
@@ -17,13 +18,25 @@ function SelectNeighbourhood(props) {
   const [neighbourhoods, setNeighbourhoods] = useState([]);
 
   useEffect(() => {
-    axios.get("/neighbourhood/choices")
-      .then(
-        (response) => {
-          setNeighbourhoods(response.data);
-        }
-      );
-  }, []);
+    props.user.coordinates && axios.get("/neighbourhood").then((response) => {
+      const array = response.data;
+      console.log("user:",props.user)
+      console.log("array:",array)
+      for (let neighbourhood of array) {
+        neighbourhood.score = Math.sqrt(Math.pow((props.user.coordinates.x - neighbourhood.coordinates.x), 2) + Math.pow((props.user.coordinates.y - neighbourhood.coordinates.y), 2));
+      }
+      
+      const neighbourhoodChoices = array.sort((a, b) => {
+        if (a.score < b.score) return -1;
+        if (a.score > b.score) return 1;
+        return 0;
+      });
+
+      setNeighbourhoods(neighbourhoodChoices)
+      
+    });
+      
+  }, [props.user]);
 
   const onAddNeighbourhood = function (event, id) {
     event.preventDefault();
@@ -82,3 +95,4 @@ function SelectNeighbourhood(props) {
 }
 
 export default SelectNeighbourhood;
+
