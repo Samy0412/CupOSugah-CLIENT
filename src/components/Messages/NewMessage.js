@@ -13,7 +13,11 @@ function NewMessage(props) {
   const [userPhoto, setUserPhoto] = useState([]);
 
   useEffect(() => {
-    axios.get(`/messages/conversation?receiver_id=${props.receiver.user_id}`)
+    let values = {
+      user_id: props.user.id,
+      receiver_id: props.receiver.user_id,
+    };
+    axios.get(`/messages/conversation`, values)
       .then(
         (response) => {
           setConversations(response.data);
@@ -43,6 +47,7 @@ function NewMessage(props) {
         conversations={setMessages}
         setUserPhoto={setUserPhoto}
         userphoto={userPhoto}
+        user={props.user}
       >
         {messagesJSX}
       </Conversation>);

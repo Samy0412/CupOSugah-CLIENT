@@ -10,6 +10,7 @@ function Conversation(props) {
     const message = event.target.elements["message"].value;
     let messageData ={
       message,
+      user_id: props.user.id,
       receiver_id: props.receiver_id,
       conversation_id: props.conversation_id,
     };

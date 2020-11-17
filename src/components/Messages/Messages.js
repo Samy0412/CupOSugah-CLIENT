@@ -25,8 +25,10 @@ function Messages(props) {
   }
 
 useEffect(()=>{
-    if (props.receiver.user_id){
-      axios.get(`/messages/conversation?receiver_id=${props.receiver.user_id}`)
+ 
+    if (props.receiver.user_id ){
+   
+      axios.get(`/messages/conversation?user_id=${props.user.id}&receiver_id=${props.receiver.user_id}`)
         .then(
           (response) => {
             setConversations(response.data);
@@ -39,9 +41,10 @@ useEffect(()=>{
 },[props.receiver])
 
 useEffect (()=> {
-  axios.get(`/messages/userMessages?user_id=${props.user.id}`).then((response) => {
-    setConversations(response.data);
-  }); 
+
+    axios.get(`/messages/userMessages?user_id=${props.user.id}`).then((response) => {
+      setConversations(response.data);
+    }); 
 
 }, [messages])
 
@@ -149,6 +152,7 @@ useEffect(()=> {
         newConversation={conversations}
         setUserPhoto={setUserPhoto}
         userphoto={userPhoto}
+        user={props.user}
       >
         {messagesJSX}
        
@@ -166,8 +170,6 @@ useEffect(()=> {
      } 
    }
 
-console.log("conversation:",conversation)
-console.log("conversations:",conversations)
   return (
 
     <div>
