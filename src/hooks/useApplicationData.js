@@ -32,6 +32,10 @@ export default function useApplicationData() {
     localStorage.setItem("userObj", JSON.stringify(state.user));
   }, [state.user]);
 
+  useEffect(()=> {
+    localStorage.setItem("databaseReset",JSON.stringify(state.databaseReset));
+  },[state.databaseReset])
+
   return {
     state,
     setUser,
