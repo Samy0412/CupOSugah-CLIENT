@@ -19,7 +19,7 @@ export default function useApplicationData() {
   //Gets the information from localstorage each time there is a refresh and set the state at first load)
   useEffect(() => {
     const data = localStorage.getItem("userObj");
-    const data2 = localstorage.getItem("databaseReset");
+    const data2 = localStorage.getItem("databaseReset");
     if (data) {
       const user = JSON.parse(data);
       const databaseReset = JSON.parse(data2);
