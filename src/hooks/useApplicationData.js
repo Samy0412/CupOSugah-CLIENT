@@ -36,6 +36,5 @@ export default function useApplicationData() {
     setReceiver,
     setEvent,
     setAlert,
-    setDatabaseReset,
   };
 }
