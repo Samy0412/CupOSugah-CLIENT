@@ -20,10 +20,11 @@ export default function useApplicationData() {
   useEffect(() => {
     const data = localStorage.getItem("userObj");
     const data2 = localStorage.getItem("databaseReset");
-    if (data) {
+    console.log(data2);
+    if (data && data2) {
       const user = JSON.parse(data);
       const databaseReset = JSON.parse(data2);
-      setState({ ...state, user,databaseReset});
+      setState({ ...state, user});
     }
   }, []);
 
