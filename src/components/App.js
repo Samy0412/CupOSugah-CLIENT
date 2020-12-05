@@ -47,14 +47,6 @@ function App() {
         console.log("database reset");
       })
     }
-      const data = localStorage.getItem("userObj");
-      // const data2 = localStorage.getItem("databaseReset");
-      if (data) {
-        const user = JSON.parse(data);
-        // const databaseReset = JSON.parse(data2);
-        setUser(user)
-        // setDatabaseReset(databaseReset)
-    }
   }, []);
 
 
