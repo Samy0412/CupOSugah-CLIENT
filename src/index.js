@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //That is our own styling sheet
 import "./styles.scss";
 
-setinterval(()=> {
+setInterval(()=> {
   axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=>console.log("database reset!"))
 }, 120000);
 
