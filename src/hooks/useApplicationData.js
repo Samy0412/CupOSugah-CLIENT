@@ -29,18 +29,24 @@ export default function useApplicationData() {
         console.log("database reset");
       })  
       .then(()=>{
+        const data = localStorage.getItem("userObj");
         const data2 = localStorage.getItem("databaseReset");
-        const databaseReset = JSON.parse(data2);
-        setState({ ...state, databaseReset});
+        console.log(data2);
+        if (data && data2) {
+          const user = JSON.parse(data);
+          const databaseReset = JSON.parse(data2);
+          setState({ ...state, user,databaseReset});
+      }
       })
+    }else{
+      const data = localStorage.getItem("userObj");
+      const data2 = localStorage.getItem("databaseReset");
+      console.log(data2);
+      if (data && data2) {
+        const user = JSON.parse(data);
+        const databaseReset = JSON.parse(data2);
+        setState({ ...state, user,databaseReset});
     }
-    const data = localStorage.getItem("userObj");
-    const data2 = localStorage.getItem("databaseReset");
-    console.log(data2);
-    if (data && data2) {
-      const user = JSON.parse(data);
-      const databaseReset = JSON.parse(data2);
-      setState({ ...state, user,databaseReset});
     }
   }, []);
 
