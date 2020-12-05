@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import axios from "axios";
@@ -11,22 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //That is our own styling sheet
 import "./styles.scss";
 
-
-useEffect(()=>{
-  setInterval(()=> {
-    axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=>console.log("database reset!"))
-  }, 120000);
-  
-  setInterval(()=> {
-    console.log("I say hello every 29min so that I don't fall asleep!")
-  }, 60000);
-  
-  let time =0;
-  setInterval(()=>{
-  time+=1000;
-  console.log(time)},1000);
-
-},[])
 
 
 if (process.env.REACT_APP_API_BASE_URL) {

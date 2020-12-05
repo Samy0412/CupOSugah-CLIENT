@@ -42,6 +42,13 @@ function App() {
     
   }, []);
 
+
+
+useEffect(()=>{
+    axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=>console.log("database reset!"))
+},[])
+
+
   //That is going to be our main app, once we log in or sign in
   const Website = () => (
     <div>
