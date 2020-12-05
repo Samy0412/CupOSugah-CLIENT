@@ -17,6 +17,16 @@ export default function useApplicationData() {
   const setAlert = (alert)=> setState ({...state, alert});
   const setDatabaseReset = (databaseReset)=>setState({...state, databaseReset});
 
+
+  useEffect(()=> {
+    if(!state.databaseReset){
+      axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=> {
+      setDatabaseReset(true);
+      localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
+      console.log("database reset")})
+    }
+  },[])
+  
   //Gets the information from localstorage each time there is a refresh and set the state at first load)
   useEffect(() => {
     const data = localStorage.getItem("userObj");
@@ -35,14 +45,7 @@ export default function useApplicationData() {
   }, [state.user]);
 
 
-  useEffect(()=> {
-    if(!state.databaseReset){
-      axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=> {
-      setDatabaseReset(true);
-      localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
-      console.log("database reset")})
-    }
-  },[state.databaseReset])
+  
 
 
   
