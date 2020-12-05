@@ -37,17 +37,17 @@ function App() {
   };
 
 
-  useEffect(() => {
-    fetchCategoriesAndSubscriptions();
-    if(!state.databaseReset){
-      axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
-      .then(()=> {
-        setDatabaseReset(true)
-        localStorage.setItem("databaseReset", JSON.stringify(true));
-        console.log("database reset");
-      })
-    }
-  }, []);
+  // useEffect(() => {
+  //   fetchCategoriesAndSubscriptions();
+  //   if(!state.databaseReset){
+  //     axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
+  //     .then(()=> {
+  //       setDatabaseReset(true)
+  //       localStorage.setItem("databaseReset", JSON.stringify(true));
+  //       console.log("database reset");
+  //     })
+  //   }
+  // }, []);
 
 
 
