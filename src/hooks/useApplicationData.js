@@ -32,7 +32,7 @@ export default function useApplicationData() {
   //Stores the user information in localStorage so that we can use it to set the state again if a refresh happens
   useEffect(() => {
     localStorage.setItem("userObj", JSON.stringify(state.user));
-    localStorage.setitem("databaseReset",JSON.stringify(state.databaseReset));
+    localStorage.setItem("databaseReset",JSON.stringify(state.databaseReset));
   }, [state.user, state.databaseReset]);
 
   return {
