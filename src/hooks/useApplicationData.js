@@ -21,14 +21,17 @@ export default function useApplicationData() {
   //Gets the information from localstorage each time there is a refresh and set the state at first load)
   useEffect(() => {
     if(!state.databaseReset){
-      axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=> {
-      localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
-      console.log("database reset")}).then(()=>{
-
+      axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
+      .then(()=> {
+        setDatabaseReset(true)})
+      .then(()=> {
+        localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
+        console.log("database reset");
+      })  
+      .then(()=>{
         const data2 = localStorage.getItem("databaseReset");
         const databaseReset = JSON.parse(data2);
         setState({ ...state, databaseReset});
-
       })
     }
     const data = localStorage.getItem("userObj");
