@@ -39,7 +39,18 @@ function App() {
 
   useEffect(() => {
     fetchCategoriesAndSubscriptions();
-    
+    if(!state.databaseReset){
+      axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
+      .then(()=> {
+        setDatabaseReset(true)})
+      .then(()=> {
+        localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
+        console.log("database reset");
+      })
+    }
+    const data2 = localStorage.getItem("databaseReset");
+    const databaseReset = JSON.parse(data2);
+    setDatabaseReset(databaseReset)
   }, []);
 
 
