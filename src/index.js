@@ -16,9 +16,13 @@ setInterval(()=> {
 }, 120000);
 
 setInterval(()=> {
-  console.log("I says hello every 29min so that I don't fall asleep!")
+  console.log("I say hello every 29min so that I don't fall asleep!")
 }, 60000);
 
+let time =0;
+setInterval(()=>{
+time+=1000;
+console.log(time)},1000);
 
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
