@@ -42,15 +42,19 @@ function App() {
     if(!state.databaseReset){
       axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
       .then(()=> {
-        setDatabaseReset(true)})
-      .then(()=> {
-        localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
+        setDatabaseReset(true)
+        localStorage.setItem("databaseReset", JSON.stringify(true));
         console.log("database reset");
+      }).then (()=> {
+        const data2 = localStorage.getItem("databaseReset");
+        const databaseReset = JSON.parse(data2);
+        setDatabaseReset(databaseReset)
       })
+    }else {
+      const data2 = localStorage.getItem("databaseReset");
+      const databaseReset = JSON.parse(data2);
+      setDatabaseReset(databaseReset)
     }
-    const data2 = localStorage.getItem("databaseReset");
-    const databaseReset = JSON.parse(data2);
-    setDatabaseReset(databaseReset)
   }, []);
 
 

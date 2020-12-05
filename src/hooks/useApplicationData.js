@@ -33,11 +33,6 @@ export default function useApplicationData() {
   }, [state.user]);
 
 
-  
-
-
-  
-
   return {
     state,
     setUser,
