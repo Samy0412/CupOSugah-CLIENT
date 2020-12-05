@@ -52,7 +52,8 @@ function App() {
       if (data) {
         const user = JSON.parse(data);
         const databaseReset = JSON.parse(data2);
-        setState({ ...state, user, databaseReset});
+        setUser(user)
+        setDatabaseReset(databaseReset)
     }}
   }, []);
 
