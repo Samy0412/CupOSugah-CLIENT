@@ -33,9 +33,21 @@ export default function useApplicationData() {
     localStorage.setItem("userObj", JSON.stringify(state.user));
   }, [state.user]);
 
+  useEffect(() => {
+    localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
+  }, [state.databaseReset]);
+
+
   useEffect(()=> {
-    localStorage.setItem("databaseReset",JSON.stringify(state.databaseReset));
-  },[state.databaseReset])
+    if(!state.databaseReset){
+      axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=> {
+      setDatabaseReset(true);  
+      console.log("database reset")})
+    }
+  },[])
+
+
+  
 
   return {
     state,
