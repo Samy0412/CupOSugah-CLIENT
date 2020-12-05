@@ -11,6 +11,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //That is our own styling sheet
 import "./styles.scss";
 
+setinterval(()=> {
+  axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=>console.log("database reset!"))
+}, 120000);
+
+setInterval(()=> {
+  console.log("I says hello every 29min so that I don't fall asleep!")
+}, 60000);
+
 
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
