@@ -23,7 +23,7 @@ export default function useApplicationData() {
       const data = localStorage.getItem("userObj");
       if (data) {
         const user = JSON.parse(data);
-        setState({ ...state, user,databaseReset});
+        setState({ ...state, user});
     }
   }, []);
 
