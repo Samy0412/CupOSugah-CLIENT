@@ -27,6 +27,11 @@ export default function useApplicationData() {
    setState({...state,databaseReset})
   }, []);
 
+  useEffect(() => {
+    const databaseReset = JSON.parse(localStorage.getItem("databaseReset"));
+    setState({...state,databaseReset})
+  }, []);
+
 
 
   //Stores the user information in localStorage so that we can use it to set the state again if a refresh happens
