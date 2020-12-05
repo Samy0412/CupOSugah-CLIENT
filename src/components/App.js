@@ -25,7 +25,7 @@ import Team from "./Landing/Team";
 
 function App() {
   //Gets the state from useApplicationData.js
-  const { state, setUser, setReceiver, setEvent, setAlert, setDatabaseReset } = useApplicationData();
+  const { state, setUser, setReceiver, setEvent, setAlert} = useApplicationData();
   const [categories, setCategories] = useState([]);
   const [subscriptions, setSubscriptions] = useState([]);
 
@@ -35,20 +35,6 @@ function App() {
     const mata = await axios.get("/subscriptions");
     setSubscriptions(mata.data);
   };
-
-
-  // useEffect(() => {
-  //   fetchCategoriesAndSubscriptions();
-  //   if(!state.databaseReset){
-  //     axios.get("https://cuposugah.herokuapp.com/api/debug/reset")
-  //     .then(()=> {
-  //       setDatabaseReset(true)
-  //       localStorage.setItem("databaseReset", JSON.stringify(true));
-  //       console.log("database reset");
-  //     })
-  //   }
-  // }, []);
-
 
 
   //That is going to be our main app, once we log in or sign in
