@@ -12,10 +12,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
 
 
-axios.get("https://cuposugah.herokuapp.com/api/debug/reset").then(()=>console.log("database reset!"))
-
-
-
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
