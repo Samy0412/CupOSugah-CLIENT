@@ -46,7 +46,7 @@ function App() {
         localStorage.setItem("databaseReset", JSON.stringify(true));
         console.log("database reset");
       })
-    }else {
+    }
       const data = localStorage.getItem("userObj");
       // const data2 = localStorage.getItem("databaseReset");
       if (data) {
@@ -54,7 +54,7 @@ function App() {
         // const databaseReset = JSON.parse(data2);
         setUser(user)
         // setDatabaseReset(databaseReset)
-    }}
+    }
   }, []);
 
 
