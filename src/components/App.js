@@ -45,16 +45,15 @@ function App() {
         setDatabaseReset(true)
         localStorage.setItem("databaseReset", JSON.stringify(true));
         console.log("database reset");
-      }).then (()=> {
-        const data2 = localStorage.getItem("databaseReset");
-        const databaseReset = JSON.parse(data2);
-        setDatabaseReset(databaseReset)
       })
     }else {
+      const data = localStorage.getItem("userObj");
       const data2 = localStorage.getItem("databaseReset");
-      const databaseReset = JSON.parse(data2);
-      setDatabaseReset(databaseReset)
-    }
+      if (data) {
+        const user = JSON.parse(data);
+        const databaseReset = JSON.parse(data2);
+        setState({ ...state, user, databaseReset});
+    }}
   }, []);
 
 
