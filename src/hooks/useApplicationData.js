@@ -42,7 +42,7 @@ export default function useApplicationData() {
       localStorage.setItem("databaseReset", JSON.stringify(state.databaseReset));
       console.log("database reset")})
     }
-  },[])
+  },[state.databaseReset])
 
 
   
