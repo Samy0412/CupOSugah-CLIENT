@@ -48,12 +48,12 @@ function App() {
       })
     }else {
       const data = localStorage.getItem("userObj");
-      const data2 = localStorage.getItem("databaseReset");
+      // const data2 = localStorage.getItem("databaseReset");
       if (data) {
         const user = JSON.parse(data);
-        const databaseReset = JSON.parse(data2);
+        // const databaseReset = JSON.parse(data2);
         setUser(user)
-        setDatabaseReset(databaseReset)
+        // setDatabaseReset(databaseReset)
     }}
   }, []);
 
