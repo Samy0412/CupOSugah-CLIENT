@@ -19,13 +19,10 @@ export default function useApplicationData() {
   //Gets the information from localstorage each time there is a refresh and set the state at first load)
   useEffect(() => {
     const data = localStorage.getItem("userObj");
-    const data2 = localStorage.getItem("databaseReset");
-    const databaseReset = JSON.parse(data2);
     if (data) {
       const user = JSON.parse(data);
-      setState({ ...state, user, databaseReset});
+      setState({ ...state, user});
     }
-      setState({ ...state, databaseReset });
   }, []);
 
   //Stores the user information in localStorage so that we can use it to set the state again if a refresh happens
