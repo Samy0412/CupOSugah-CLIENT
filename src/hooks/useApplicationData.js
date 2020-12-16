@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 export default function useApplicationData() {
   //Hook to store the state and update it
@@ -23,7 +22,7 @@ export default function useApplicationData() {
         const user = JSON.parse(data);
         setState({...state, user})
       }
-  })
+  },[])
   //Stores the user information in localStorage so that we can use it to set the state again if a refresh happens
   useEffect(() => {
     localStorage.setItem("userObj", JSON.stringify(state.user));
