@@ -78,6 +78,7 @@ function Notifications(props) {
     return filtered;
   };
 
+
   const sortSubscriptions = function (subscriptions) {
     let createSubs = [];
     for (const entry in subscriptions) {

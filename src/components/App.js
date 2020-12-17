@@ -25,7 +25,7 @@ import Team from "./Landing/Team";
 
 function App() {
   //Gets the state from useApplicationData.js
-  const { state, setUser, setReceiver, setEvent, setAlert} = useApplicationData();
+  const { state, user, setUser, setReceiver, setEvent, setAlert} = useApplicationData();
   const [categories, setCategories] = useState([]);
   const [subscriptions, setSubscriptions] = useState([]);
 
@@ -36,15 +36,20 @@ function App() {
     setSubscriptions(mata.data);
   };
 
+  //retreives all of the categories and subscriptions
+  useEffect(() => {
+    fetchCategoriesAndSubscriptions();
+
+  }, []);
 
   //That is going to be our main app, once we log in or sign in
   const Website = () => (
     <div>
-      <Nav user={state.user} logout={setUser} />
+      <Nav user={user} logout={setUser} />
       <Switch>
         <Route path="/home" exact>
           <Home
-            user={state.user}
+            user={user}
             receiver={state.receiver}
             receiverData={setReceiver}
             eventSelected={state.event}
@@ -53,7 +58,7 @@ function App() {
         </Route>
         <Route path="/events" exact>
           <Events
-            user={state.user}
+            user={user}
             receiver={state.receiver}
             receiverData={setReceiver}
             subscriptions={subscriptions}
@@ -64,7 +69,7 @@ function App() {
         </Route>
         <Route path="/services" exact>
           <Services
-            user={state.user}
+            user={user}
             receiver={state.receiver}
             receiverData={setReceiver}
             subscriptions={subscriptions}
@@ -73,7 +78,7 @@ function App() {
         </Route>
         <Route path="/alerts" exact>
           <Alerts
-            user={state.user}
+            user={user}
             receiver={state.receiver}
             receiverData={setReceiver}
             subscriptions={subscriptions}
@@ -83,7 +88,7 @@ function App() {
         </Route>
         <Route path="/map" exact>
           <MapPage
-            user={state.user}
+            user={user}
             receiver={state.receiver}
             receiverData={setReceiver}
             eventSelected={state.event}
@@ -92,14 +97,14 @@ function App() {
           ></MapPage>
         </Route>
         <Route path="/messages" exact>
-          <Messages user={state.user} receiver={state.receiver} ></Messages>
+          <Messages user={user} receiver={state.receiver} ></Messages>
         </Route>
         <Route path="/account" exact>
           <Account
             updateSubscriptions={fetchCategoriesAndSubscriptions}
             subscriptions={subscriptions}
             categories={categories}
-            user={state.user}
+            user={user}
             editUser={setUser}
           ></Account>
         </Route>
@@ -131,13 +136,13 @@ function App() {
         </Route>
         <Route path="/selectNeighbourhood" exact>
           <SelectNeighbourhood
-            user={state.user}
+            user={user}
             register={setUser}
           ></SelectNeighbourhood>
         </Route>
         <Route path="/createNeighbourhood" exact>
           <CreateNeighbourhood
-            user={state.user}
+            user={user}
             register={setUser}
           ></CreateNeighbourhood>
         </Route>
