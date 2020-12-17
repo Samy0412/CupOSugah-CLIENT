@@ -132,7 +132,10 @@ function App() {
           <Register register={setUser}></Register>
         </Route>
         <Route path="/address" exact>
-          <Address register={setUser} user={state.user}></Address>
+          <Address 
+          register={setUser} 
+          user={user}>
+          </Address>
         </Route>
         <Route path="/selectNeighbourhood" exact>
           <SelectNeighbourhood
