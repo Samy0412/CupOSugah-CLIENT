@@ -36,7 +36,7 @@ export default function useApplicationData() {
   //Reset the database once only
   useEffect(() => {
     if(!resetDatabase){
-    axios.get("http://localhost:8001/api/debug/reset").then(()=> {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/debug/reset`).then(()=> {
       setResetDatabase(true);
       console.log("database reset!")
     })
