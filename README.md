@@ -17,6 +17,7 @@ REACT_APP_GOOGLE_KEY="[your api key]"
 REACT_APP_GEOCODING_KEY="[your api key]"
 ```
 4. Start the web server using the `npm start` command. 
+5. Go to <http://localhost:3000/> in your browser.
 
 
 ## Final product
