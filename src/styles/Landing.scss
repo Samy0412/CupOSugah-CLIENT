@@ -305,6 +305,80 @@ footer {
   }
 }
 
+.alert-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+
+  .warning-icon {
+    font-size: 3.5rem;
+    margin-right: 2rem;
+    margin-top: -0.4rem;
+  }
+}
+
+#alert {
+  color: $darkBlue;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  h4 {
+    font-size: 2rem;
+    margin: auto;
+    span {
+      font-family: $logoFont8;
+      font-size: 2.5rem;
+    }
+  }
+  button {
+    margin: auto;
+    background-color: #fae5a4;
+    border: none;
+    border-radius: 0.3rem;
+    color: $darkBlue;
+    font-weight: 500;
+    padding: 0.5rem 4rem;
+    width: fit-content;
+    transition: 200ms background-color ease-in;
+    &:hover {
+      background-color: #f3c677;
+    }
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    border: 0.1rem solid red;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    color: red;
+    #disclaimer_icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+      margin-bottom: 0.8rem;
+    }
+    .disclaimer_title {
+      margin-bottom: 0rem;
+      color: red;
+    }
+  }
+}
+.shadow {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.invisible {
+  display: none;
+}
+
 @media screen and (max-width: 1600px) {
   #about {
     width: 55vw;
