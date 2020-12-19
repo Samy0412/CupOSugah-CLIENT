@@ -23,27 +23,27 @@ REACT_APP_GEOCODING_KEY="[your api key]"
 
 Landing page: 
 
-!["Appointments"](https://github.com/Samy0412/scheduler/blob/master/public/images/Appointments.png?raw=true)
+!["landing page"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/landing-page.png?raw=true)
 
-create your neighbourhood page:
-!["Form"](https://github.com/Samy0412/scheduler/blob/master/public/images/Form.png?raw=true)
+Create a new neighbourhood:
+!["create neighbourhood"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/create-neighbourhood.png?raw=true)
 
 Home page:
 
-!["Confirm"](https://github.com/Samy0412/scheduler/blob/master/public/images/Confirm.png?raw=true)
+!["home page"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/home-page.png?raw=true)
 
 Map page:
 
-!["Error"](https://github.com/Samy0412/scheduler/blob/master/public/images/Error.png?raw=true)
+!["map"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/map-page.png?raw=true)
 
 Calendar page:
 
-!["Appointments"](https://github.com/Samy0412/scheduler/blob/master/public/images/Appointments.png?raw=true)
+!["calendar"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/calendar-page.png?raw=true)
 
 Services page:
 
-!["Appointments"](https://github.com/Samy0412/scheduler/blob/master/public/images/Appointments.png?raw=true)
+!["Services"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/service-page.png?raw=true)
 
 Settings page: 
 
-!["Appointments"](https://github.com/Samy0412/scheduler/blob/master/public/images/Appointments.png?raw=true)
+!["settings"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/settings.png?raw=true)
