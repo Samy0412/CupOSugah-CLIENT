@@ -40,6 +40,14 @@ Calendar page:
 
 !["calendar"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/calendar-page.png?raw=true)
 
+Messaging page:
+
+!["messages"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/messages-page.png?raw=true)
+
+Messaging page- responsive:
+
+!["messages-responsive"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/responsive-messages.png?raw=true)
+
 Services page:
 
 !["Services"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/service-page.png?raw=true)
@@ -47,3 +55,5 @@ Services page:
 Settings page: 
 
 !["settings"](https://github.com/Samy0412/CupOSugah-CLIENT/blob/main/public/images/settings.png?raw=true)
+
+
