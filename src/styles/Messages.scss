@@ -268,11 +268,11 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .chat-application .no-messages {
-    width: 60vw;
+  .chat-application {
+    width: 65vw;
   }
   .no-messages {
-    width: 60vw;
+    width: 65vw;
   }
 }
 
@@ -280,21 +280,32 @@
   .chat-application {
     width: 80vw;
   }
+
+  .messages-container {
+    width: 90%;
+  }
+
   .no-messages {
     width: 80vw;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .chat-application {
     width: 90vw;
   }
   .no-messages {
     width: 90vw;
   }
+  .sidebar {
+    width: 45%;
+  }
+  .messages-container {
+    width: 80%;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .no-messages {
     width: 90vw;
   }
@@ -324,6 +335,9 @@
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
     }
+  }
+  .messages-container {
+    width: 100%;
   }
   figure {
     border-top-left-radius: 6px;
