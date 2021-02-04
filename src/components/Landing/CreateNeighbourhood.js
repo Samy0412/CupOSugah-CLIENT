@@ -51,8 +51,7 @@ function CreateNeighbourhood(props) {
     });
     polygonArrayFormatted = newArrayFormatted;
     polygonArray = newArray;
-
-
+   
   }
 
   function getPaths(polygon) {
