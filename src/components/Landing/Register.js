@@ -1,6 +1,9 @@
 import React, { useState} from "react";
-import { Redirect, NavLink } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
+
+// react-loading
+import ReactLoading from "react-loading"
 
 // @material-ui/core components
 import { Button } from "@material-ui/core";
@@ -17,12 +20,15 @@ function Register(props) {
   const [addressRedirect, setAddressRedirect] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [validated, setValidated] = useState(false);
+  const [loading, setLoading]=useState(false);
 
   const onChangeHandler = event =>{
     setSelectedFiles(Array.from(event.target.files))
   }
 
   const onSubmitHandler = function (event) {
+
+    setLoading(true);
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -79,9 +85,8 @@ function Register(props) {
       .then((response) => {
         props.register(response.data);
         setAddressRedirect(true);
-      }
-
-      )
+        setLoading(false);
+      })
       .catch((err) => {
         alert("E-Mail is already registered");
       });
@@ -95,14 +100,16 @@ function Register(props) {
   return (
     <div>
     <header className="landing-header">
-      <NavLink to="/">
+      <Link to="/">
         <div className="logo-container">
           <img src="https://i.imgur.com/j6IJGS2.png" alt="logo" />
           <h4 className="logo">Cup<span>O</span>Sugah</h4>
         </div>
-        </NavLink>
+        </Link>
     </header>
-    <div className="registration-form">
+    {loading && <ReactLoading className= "loading" type={"spokes"} color={"#2c3e50"} height={"8%"} width={"8%"}/>}
+    {!loading && (
+      <div className="registration-form">
       <Form onSubmit={onSubmitHandler} className="form-contenant" noValidate  validated={validated}>
         <div className="form-header">
           <h2 id="transition-modal-title">Step 1: Enter your information</h2>
@@ -195,6 +202,8 @@ function Register(props) {
       </div>
       </Form>
     </div>
+    )}
+    
     </div>
     
   );

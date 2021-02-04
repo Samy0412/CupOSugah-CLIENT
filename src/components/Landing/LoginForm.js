@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-
-// @material-ui/core components
 
 
 // react-bootstrap
@@ -87,7 +85,6 @@ function LoginForm(props) {
           variant="warning"
           type="submit"
           className="service-alert-button post"
-          
         >
           LOG IN
         </Button>
@@ -97,9 +94,8 @@ function LoginForm(props) {
         <small>
           Don't have an account yet? 
         </small>
-        <small><a href="/register">Register here</a></small>
+        <small><Link to="/register">Register here</Link></small>
         </div>
-        
         
       </Form>
     </div>

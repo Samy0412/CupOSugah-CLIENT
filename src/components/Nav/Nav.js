@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import {
   Dropdown,
@@ -51,28 +51,28 @@ function Nav(props) {
   return (
     <div className="nav-bar">
       <div className="left-side-nav">
-        <NavLink to="/home" className="home-link">
+        <Link to="/home" className="home-link">
         <div className="logo-container">
           <img src="https://i.imgur.com/j6IJGS2.png" alt="logo" />
           <h4 className="logo">Cup<span>O</span>Sugah</h4>
         </div>
-        </NavLink>
+        </Link>
         <div className="menu-dropdown">
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle>
               Menu <i className="fa fa-chevron-down"></i>
             </DropdownToggle>
             <DropdownMenu>
-              <NavLink to="/home">
-                <DropdownItem>
+              <Link to="/home">
+              <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
                     <HomeIcon className="icon " />
                     <div> Home</div>{" "}
                   </div>
-                </DropdownItem>
-              </NavLink>{" "}
-              <NavLink to="/map">
+              </DropdownItem>
+              </Link>{" "}
+              <Link to="/map">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -83,8 +83,8 @@ function Nav(props) {
                     <div> Map</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/events">
+              </Link>
+              <Link to="/events">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -92,8 +92,8 @@ function Nav(props) {
                     <div> Events</div>{" "}
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/services">
+              </Link>
+              <Link to="/services">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -104,8 +104,8 @@ function Nav(props) {
                     <div> Services</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/alerts">
+              </Link>
+              <Link to="/alerts">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -113,7 +113,7 @@ function Nav(props) {
                     <div> Alerts</div>{" "}
                   </div>
                 </DropdownItem>
-              </NavLink>
+              </Link>
             </DropdownMenu>
           </Dropdown>
         </div>
@@ -168,14 +168,14 @@ function Nav(props) {
                     </figure>
                     <DropdownItem divider />
                   </DropdownItem>
-                  <NavLink to="/account">
+                  <Link to="/account">
                     <DropdownItem>
                       <div className="button-layout">
                         <SettingsIcon className="icon" />
                         <div> Settings</div>
                       </div>
                     </DropdownItem>
-                  </NavLink>
+                  </Link>
                   <DropdownItem>
                     <span onClick={logout}>
                       <div className="button-layout exit">
@@ -193,7 +193,7 @@ function Nav(props) {
               <i className="fa fa-bars"></i>
             </DropdownToggle>
             <DropdownMenu>
-              <NavLink to="/home">
+              <Link to="/home">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -201,8 +201,8 @@ function Nav(props) {
                     <div> Home</div>{" "}
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/map">
+              </Link>
+              <Link to="/map">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -213,8 +213,8 @@ function Nav(props) {
                     <div> Map</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/events">
+              </Link>
+              <Link to="/events">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -222,8 +222,8 @@ function Nav(props) {
                     <div> Events</div>{" "}
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/services">
+              </Link>
+              <Link to="/services">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -234,8 +234,8 @@ function Nav(props) {
                     <div> Services</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/alerts">
+              </Link>
+              <Link to="/alerts">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -243,9 +243,9 @@ function Nav(props) {
                     <div> Alerts</div>{" "}
                   </div>
                 </DropdownItem>
-              </NavLink>
+              </Link>
 
-              <NavLink to="/messages">
+              <Link to="/messages">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout exit">
@@ -253,8 +253,8 @@ function Nav(props) {
                     <div> Messages</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
-              <NavLink to="/account">
+              </Link>
+              <Link to="/account">
                 <DropdownItem>
                   {" "}
                   <div className="button-layout">
@@ -262,7 +262,7 @@ function Nav(props) {
                     <div> Settings</div>
                   </div>
                 </DropdownItem>
-              </NavLink>
+              </Link>
               <DropdownItem>
                 <span onClick={logout}>
                   <div className="button-layout exit">

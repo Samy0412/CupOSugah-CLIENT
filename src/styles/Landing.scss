@@ -85,13 +85,15 @@ nav {
   }
 }
 
+a {
+  text-decoration: none !important;
+}
 .sign-in-button {
   background-color: #fae5a4 !important;
   border: #fae5a4 solid 1px !important;
   color: #2c3e50 !important;
   font-weight: 500 !important;
   width: 200px;
-
   box-shadow: none !important;
 
   &:hover {

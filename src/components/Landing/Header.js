@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Components
 import LoginForm from "./LoginForm";
@@ -53,23 +53,23 @@ function Header(props) {
   return (
     <div>
       <header className="landing-header">
-      <NavLink to="/">
+      <Link to="/">
         <div className="logo-container">
           <img src="https://i.imgur.com/j6IJGS2.png" alt="logo" />
           <h4 className="logo">Cup<span>O</span>Sugah</h4>
         </div>
-        </NavLink>
+        </Link>
         <nav>
           <ul className="nav-links">
             <li>
-              <a className="nav-link" href="/about">
+            <Link className="nav-link" to="/about">
                 About
-              </a>
+            </Link>
             </li>
             <li>
-              <a className="nav-link" href="/team">
+            <Link className="nav-link" to="/team">
                 Team
-              </a>
+            </Link>
             </li>
           </ul>
         </nav>
@@ -86,16 +86,16 @@ function Header(props) {
                 <DropdownMenu right>
                   <DropdownItem header>
                   </DropdownItem>
-                  <NavLink to="/team">
+                  <Link to="/team">
                     <DropdownItem>
                      Team
                     </DropdownItem>
-                  </NavLink>
-                  <NavLink to="/about">
+                  </Link>
+                  <Link to="/about">
                   <DropdownItem>
                     About
                   </DropdownItem>
-                  </NavLink>
+                  </Link>
                 </DropdownMenu>
               </Dropdown>
             </div>

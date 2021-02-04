@@ -40,9 +40,7 @@ function Map2(props) {
           zIndex: 1,
         },
       }}       
-            
       />
-   
   </GoogleMap>
   );
 }

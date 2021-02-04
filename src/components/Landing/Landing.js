@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link, Redirect } from "react-router-dom";
 
 // @material-ui/core components
 import { Button } from "@material-ui/core";
@@ -42,13 +43,14 @@ function Landing(props) {
               </ul>
             </div>
             <div className="sign-in-container">
+              <Link to="/register">
               <Button
                 className="sign-in-button"
                 variant="contained"
-                href="/register"
               >
                 JOIN NOW!
               </Button>
+              </Link>
             </div>
           </div>
           <div className="cover">

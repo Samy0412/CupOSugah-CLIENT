@@ -1,11 +1,14 @@
 /*global google*/
 import React, {useState } from 'react'
-import { NavLink, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios"
 import {
   withScriptjs,
   withGoogleMap,
 } from "react-google-maps";
+
+// react-loading
+import ReactLoading from "react-loading"
 
 // @material-ui/core components
 import { Button } from "@material-ui/core";
@@ -26,6 +29,7 @@ function CreateNeighbourhood(props) {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [validated, setValidated] = useState(false);
   const [validatedPath, setValidatedPath] = useState(true);
+  const [loading, setLoading]=useState(false);
   
   const WrappedMap = withScriptjs(withGoogleMap(Map2));
 
@@ -105,12 +109,13 @@ function CreateNeighbourhood(props) {
   
   /////////////
 
+
   const onChangeHandler = event =>{
     setSelectedFiles(Array.from(event.target.files))
   }
  
   const onSubmitHandler = function (event) {
-
+    setLoading(true);
 
     const neighbourhoodName = event.target.elements['formBasicName'].value;
     let neighbourhoodCenter = null;
@@ -181,7 +186,9 @@ function CreateNeighbourhood(props) {
     axios.post("/users/addNeighbourhood", userInfo)
       .then((response) =>
         props.register(response.data),
-      ).then (()=> sethomeRedirect(true));
+      ).then (()=> {
+        sethomeRedirect(true)
+        setLoading(false);});
   };
 
 
@@ -193,74 +200,75 @@ function CreateNeighbourhood(props) {
  
   return (
     <div>
-      <header className="landing-header">
-        <NavLink to="/">
+        <header className="landing-header">
+        <Link to="/">
         <div className="logo-container">
           <img src="https://i.imgur.com/j6IJGS2.png" alt="logo" />
           <h4 className="logo">Cup<span>O</span>Sugah</h4>
         </div>
-        </NavLink>
-      </header>
-      <div className="neighbourhood-form">
-          
-          <Form onSubmit={onSubmitHandler} className="form-contenant" noValidate  validated={validated}> 
-            <div className="form-header">
-              <h2 >Step 3: Create a neighbourhood</h2>
-            </div>
-            <div >
-              <div className="form">
-                <Form.Group controlId="formBasicName">
-                <Form.Label>Neighbourhood Name <span>*</span></Form.Label>
-                  <Form.Control
-                    type="firstname"
-                    placeholder="Neighbourhood name"
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    This field is required
-                 </Form.Control.Feedback>    
-                </Form.Group>
-
-            <Form.Group controlId="formBasicProfilePhoto">
-              <Form.Label>Neighbourhood picture</Form.Label>
-              <Form.File 
-               custom
-              >
-              <Form.File.Input onChange={onChangeHandler} />
-              <Form.File.Label data-browse="Browse">
-              {!selectedFiles[0] ? "Select your picture (jpeg, png, gif)" : selectedFiles[0].name }
-             </Form.File.Label>
-             </Form.File>
-            </Form.Group>
-                <Form.Label>Determine the limits of your neighbourhood (draw and edit a polygon)<span> *</span></Form.Label>
-                {!validatedPath && (
-                <span style={{color:"red",marginTop:"0", fontSize:"13px"}}>The polygon is required</span>
-              )}
-                <div >
-                    <WrappedMap
-                      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
-                      loadingElement={<div style={{ height: "50vh"}} />}
-                      containerElement={<div style={{ height: "50vh" }} />}
-                      mapElement={<div style={{ height: "100%", width: "100%", boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 8px", border: validatedPath? "solid 0.5px rgba(0, 0, 0, 0.1)":"solid 0.5px red", borderRadius:"10px"}} />}
-                      getPaths={getPaths}
-                      user={props.user}
-                    />   
-                 </div>
-            </div>
-            </div>
-            <div className="button-container">
-              <Button
-                variant="contained"
-                type="submit"
-                className="registration-button"
-              >
-                  SAVE
-              </Button>
-            </div>
-          </Form>
-      </div>       
-    </div>
-
+        </Link>
+        </header>
+        {loading && <ReactLoading className= "loading" type={"spokes"} color={"#2c3e50"} height={"8%"} width={"8%"}/>}
+        {!loading && (
+            <div className="neighbourhood-form">
+            <Form onSubmit={onSubmitHandler} className="form-contenant" noValidate  validated={validated}> 
+              <div className="form-header">
+                <h2 >Step 3: Create a neighbourhood</h2>
+              </div>
+              <div >
+                <div className="form">
+                  <Form.Group controlId="formBasicName">
+                  <Form.Label>Neighbourhood Name <span>*</span></Form.Label>
+                    <Form.Control
+                      type="firstname"
+                      placeholder="Neighbourhood name"
+                      required
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      This field is required
+                  </Form.Control.Feedback>    
+                  </Form.Group>
+  
+              <Form.Group controlId="formBasicProfilePhoto">
+                <Form.Label>Neighbourhood picture</Form.Label>
+                <Form.File 
+                custom
+                >
+                <Form.File.Input onChange={onChangeHandler} />
+                <Form.File.Label data-browse="Browse">
+                {!selectedFiles[0] ? "Select your picture (jpeg, png, gif)" : selectedFiles[0].name }
+              </Form.File.Label>
+              </Form.File>
+              </Form.Group>
+                  <Form.Label>Determine the limits of your neighbourhood (draw and edit a polygon)<span> *</span></Form.Label>
+                  {!validatedPath && (
+                  <span style={{color:"red",marginTop:"0", fontSize:"13px"}}>The polygon is required</span>
+                )}
+                  <div >
+                      <WrappedMap
+                        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+                        loadingElement={<div style={{ height: "50vh"}} />}
+                        containerElement={<div style={{ height: "50vh" }} />}
+                        mapElement={<div style={{ height: "100%", width: "100%", boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 8px", border: validatedPath? "solid 0.5px rgba(0, 0, 0, 0.1)":"solid 0.5px red", borderRadius:"10px"}} />}
+                        getPaths={getPaths}
+                        user={props.user}
+                      />   
+                  </div>
+              </div>
+              </div>
+              <div className="button-container">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  className="registration-button"
+                >
+                    SAVE
+                </Button>
+              </div>
+            </Form>
+          </div>
+        )} 
+        </div>
   );
 }
 

@@ -1,6 +1,9 @@
 import React, { useState} from "react";
-import { Redirect, NavLink } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
+
+// react-loading
+import ReactLoading from "react-loading"
 
 // @material-ui/core components
 import { Button } from "@material-ui/core";
@@ -15,9 +18,12 @@ function Address(props) {
 
   const [neighbourhoodRedirect, setNeighbourhoodRedirect] = useState(false);
   const [validated, setValidated] = useState(false);
+  const [loading, setLoading]=useState(false);
   
 
   const onSubmitHandler = function (event) {
+
+    setLoading(true);
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -53,6 +59,7 @@ function Address(props) {
       .then((response) => {
         props.register(response.data);
         setNeighbourhoodRedirect(true);
+        setLoading(false);
       })
       .catch((err) => {
         alert(alert(err));
@@ -66,14 +73,17 @@ function Address(props) {
   return (
     <div>
     <header className="landing-header">
-      <NavLink to="/">
+      <Link to="/">
         <div className="logo-container">
           <img src="https://i.imgur.com/j6IJGS2.png" alt="logo" />
           <h4 className="logo">Cup<span>O</span>Sugah</h4>
         </div>
-        </NavLink>
+        </Link>
     </header>
-    <div className="address-form">
+    {loading && <ReactLoading className= "loading" type={"spokes"} color={"#2c3e50"} height={"8%"} width={"8%"}/>}
+    {!loading && (
+
+      <div className="address-form">
       <Form onSubmit={onSubmitHandler} className="form-contenant" noValidate  validated={validated}>
         <div className="form-header">
           <h2 id="transition-modal-title">Step 2: Enter your address</h2>
@@ -90,7 +100,7 @@ function Address(props) {
               placeholder="First line of your address"
               required
               />
-               <Form.Control.Feedback type="invalid">
+              <Form.Control.Feedback type="invalid">
               This field is required
               </Form.Control.Feedback>
             </Form.Group>
@@ -105,7 +115,7 @@ function Address(props) {
               placeholder="City"
               required
               />
-               <Form.Control.Feedback type="invalid">
+              <Form.Control.Feedback type="invalid">
               This field is required
               </Form.Control.Feedback>
             </Form.Group>
@@ -125,7 +135,7 @@ function Address(props) {
         
       <div className="button-container">
 
-         <Button
+        <Button
           variant="warning"
           type="submit"
           className="registration-button"
@@ -137,7 +147,8 @@ function Address(props) {
 
       </div>
       </Form>
-    </div>
+      </div>
+    )}
     </div>
     
   );
