@@ -128,35 +128,35 @@ function Alerts(props) {
     setOpenDelete(false);
   };
 
-  const fetchFilteredSubscriptions = async (postCategory_id) => {
-    const data = await axios.get("/subscriptions");
-    const filtered = data.data.filter(
-      (subscription) => subscription.category_id === parseInt(postCategory_id)
-    );
-    const subscriber_ids = filtered.map((entry) => (entry = entry.user_id));
-    const phoneData = await axios.get(
-      "/users/phone-numbers"
-    );
-    const phoneFiltered = phoneData.data
-      .filter(
-        (user) =>
-          subscriber_ids.includes(user.id) &&
-          user.neighbourhood_id === props.user.neighbourhood_id
-      )
-      .map((entry) => `+${entry.phone_number}`);
-    return phoneFiltered;
-  };
+  // const fetchFilteredSubscriptions = async (postCategory_id) => {
+  //   const data = await axios.get("/subscriptions");
+  //   const filtered = data.data.filter(
+  //     (subscription) => subscription.category_id === parseInt(postCategory_id)
+  //   );
+  //   const subscriber_ids = filtered.map((entry) => (entry = entry.user_id));
+  //   const phoneData = await axios.get(
+  //     "/users/phone-numbers"
+  //   );
+  //   const phoneFiltered = phoneData.data
+  //     .filter(
+  //       (user) =>
+  //         subscriber_ids.includes(user.id) &&
+  //         user.neighbourhood_id === props.user.neighbourhood_id
+  //     )
+  //     .map((entry) => `+${entry.phone_number}`);
+  //   return phoneFiltered;
+  // };
 
-  const sendSubscriptionSMS = async function (postCategory_id, title) {
-    let categoryName = "";
-    for (const category of categories) {
-      if (category.id === parseInt(postCategory_id)) {
-        categoryName = category.name;
-      }
-    }
-    const phoneNumbers = await fetchFilteredSubscriptions(postCategory_id);
-    axios.post("/twilio", { phoneNumbers, categoryName, title });
-  };
+  // const sendSubscriptionSMS = async function (postCategory_id, title) {
+  //   let categoryName = "";
+  //   for (const category of categories) {
+  //     if (category.id === parseInt(postCategory_id)) {
+  //       categoryName = category.name;
+  //     }
+  //   }
+  //   const phoneNumbers = await fetchFilteredSubscriptions(postCategory_id);
+  //   axios.post("/twilio", { phoneNumbers, categoryName, title });
+  // };
 
   const registerAlert = function (registrationData) {
     axios.post("/alerts", registrationData).then((response) => {
