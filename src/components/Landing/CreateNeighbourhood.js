@@ -44,8 +44,8 @@ function CreateNeighbourhood(props) {
     let pathArray = overlay.getPath().getArray();
     
     pathArray.forEach( (point) =>{
-      var x = point.lat();
-      var y = point.lng();
+      let x = point.lat();
+      let y = point.lng();
       newArray.push({x,y});
       newArrayFormatted.push(`(${x},${y})`); 
     });
@@ -57,8 +57,8 @@ function CreateNeighbourhood(props) {
   function getPaths(polygon) {
     let pathArray = polygon.getPath().getArray();
     pathArray.forEach( (point) =>{
-      var x = point.lat();
-      var y = point.lng();
+      let x = point.lat();
+      let y = point.lng();
       polygonArray.push({x,y})
       polygonArrayFormatted.push(`(${x},${y})`); 
     });
@@ -114,7 +114,7 @@ function CreateNeighbourhood(props) {
   }
  
   const onSubmitHandler = function (event) {
-    setLoading(true);
+    
 
     const neighbourhoodName = event.target.elements['formBasicName'].value;
     let neighbourhoodCenter = null;
@@ -144,6 +144,7 @@ function CreateNeighbourhood(props) {
 
     
     if(selectedFiles.length !==0 && neighbourhoodName && bounds.length ){
+      setLoading(true);
       axios.post("./images/upload", data).then((response)=> {
 
         const url = response.data[0].url;

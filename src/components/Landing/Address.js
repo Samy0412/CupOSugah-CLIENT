@@ -23,8 +23,6 @@ function Address(props) {
 
   const onSubmitHandler = function (event) {
 
-    setLoading(true);
-
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -38,6 +36,7 @@ function Address(props) {
 
     event.preventDefault();
     if (address && city && postalCode) {
+    setLoading(true);
     axios
       .get(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}+${postalCode}+${city}CA&key=${process.env.REACT_APP_GEOCODING_KEY}`

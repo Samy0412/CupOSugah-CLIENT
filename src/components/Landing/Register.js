@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 
 // react-loading
-import ReactLoading from "react-loading"
+import ReactLoading from "react-loading";
 
 // @material-ui/core components
 import { Button } from "@material-ui/core";
@@ -27,8 +27,6 @@ function Register(props) {
   }
 
   const onSubmitHandler = function (event) {
-
-    setLoading(true);
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -54,6 +52,7 @@ function Register(props) {
     const phoneNumber = event.target.elements['formBasicPhoneNumber'].value;
 
     if(selectedFiles.length !==0 && firstName && lastName && email && password){
+      setLoading(true);
       axios.post("./images/upload", data).then((response)=> {
 
         const url = response.data[0].url;
