@@ -1,0 +1,113 @@
+.popup-buttons {
+  margin-top: -10px;
+  margin-bottom: -20px;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    margin-right: 20px;
+  }
+}
+
+#delete-event {
+  color: red;
+}
+.popupcard-header {
+  margin-left: -10px;
+}
+
+.gm-style-iw {
+  padding: 0 !important;
+}
+
+.gm-ui-hover-effect {
+  display: none !important;
+}
+
+.gm-style-iw-d {
+  margin-right: -30px !important;
+  margin-left: -12px !important;
+  position: relative !important;
+}
+
+#message-button {
+  background-color: #fae5a4 !important;
+  border: #fae5a4 solid 1px !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 130px;
+
+  &:hover {
+    background-color: #f3c677 !important;
+  }
+  &:focus:active {
+    box-shadow: none !important;
+  }
+}
+
+#delete-event-button {
+  font-weight: 500 !important;
+  margin-top: -10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+
+  &:focus:active {
+    // box-shadow: none !important;
+  }
+}
+
+#map-button {
+  background-color: rgb(245, 245, 245) !important;
+  border: lightgray solid 1px !important;
+  color: gray !important;
+  font-size: 13px !important;
+  text-align: center;
+  margin-top: -30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  height: 19px;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  i {
+    padding-right: 7px;
+    font-size: 15px;
+  }
+  &:hover {
+    background-color: grayscale($color: #dfdede) !important;
+  }
+  &:focus:active {
+    box-shadow: none !important;
+  }
+}
+
+.map-event-post {
+  margin-top: -20px !important;
+}
+
+#event-information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+li {
+  border-bottom: none white !important;
+}
